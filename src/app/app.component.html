@@ -1,0 +1,52 @@
+<style>
+  .content {
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 650px;
+    align-items: center;
+  }
+</style>
+
+<h1 style="text-align: center;font-family: Verdana;">Cascading Multiselect Dropdown in Angular - Demo</h1>
+
+<div class="content">
+
+  <ng-multiselect-dropdown
+    [placeholder]="'Select Category'"
+    [settings]="dropdownSettings"
+    [data]="displayingCategoryList"
+    [(ngModel)]="selectedCategoryList"
+    (onSelect)="onCategoryItemSelect()"
+    (onSelectAll)="onCategorySelectAll($event)"
+    (onDeSelect)="onCategoryItemDeSelect($event)"
+    (onDeSelectAll)="onCategoryDeSelectAll()"
+  >
+  </ng-multiselect-dropdown>
+  <br/>
+  <ng-multiselect-dropdown
+    [placeholder]="'Select Subcategory'"
+    [settings]="dropdownSettings"
+    [data]="displayingSubcategoryList"
+    [(ngModel)]="selectedSubcategoryList"
+    (onSelect)="onSubcategoryItemSelect()"
+    (onSelectAll)="onSubcategorySelectAll($event)"
+    (onDeSelect)="onSubcategoryItemDeSelect($event)"
+    (onDeSelectAll)="onSubcategoryDeSelectAll()"
+  >
+  </ng-multiselect-dropdown>
+  <br/>
+  <ng-multiselect-dropdown
+    [placeholder]="'Select Product'"
+    [settings]="dropdownSettings"
+    [data]="displayingProductList"
+    [(ngModel)]="selectedProductList"
+    (onSelect)="onProductItemSelect()"
+    (onSelectAll)="onProductSelectAll($event)"
+    (onDeSelect)="onProductItemDeSelect($event)"
+    (onDeSelectAll)="onProductDeSelectAll()"
+  >
+  </ng-multiselect-dropdown>
+
+</div>
+
+<router-outlet></router-outlet>
